@@ -7,7 +7,6 @@ require('dotenv').config()
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var offersRouter = require("./routes/offers");
-app.use('/offers', offersRouter);
 var app = express();
 
 // view engine setup
@@ -21,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'front/build')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/offers', offersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
